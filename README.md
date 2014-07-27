@@ -1,5 +1,11 @@
 ## he-rnand-es/hipchat-laravel
 
+[![Latest Stable Version](https://poser.pugx.org/he-rnand-es/hipchat-laravel/version.svg)](https://packagist.org/packages/he-rnand-es/hipchat-laravel)
+[![Total Downloads](https://poser.pugx.org/he-rnand-es/hipchat-laravel/downloads.svg)](https://packagist.org/packages/he-rnand-es/hipchat-laravel)
+[![License](https://poser.pugx.org/he-rnand-es/hipchat-laravel/license.svg)](https://packagist.org/packages/he-rnand-es/hipchat-laravel)
+
+
+
 This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for Laravel 4.2+
 
 
