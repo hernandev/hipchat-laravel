@@ -1,23 +1,23 @@
-## he-rnand-es/hipchat-laravel
+## hernandev/hipchat-laravel
 
-[![Latest Stable Version](https://poser.pugx.org/he-rnand-es/hipchat-laravel/version.svg)](https://packagist.org/packages/he-rnand-es/hipchat-laravel)
-[![Total Downloads](https://poser.pugx.org/he-rnand-es/hipchat-laravel/downloads.svg)](https://packagist.org/packages/he-rnand-es/hipchat-laravel)
-[![License](https://poser.pugx.org/he-rnand-es/hipchat-laravel/license.svg)](https://packagist.org/packages/he-rnand-es/hipchat-laravel)
+[![Latest Stable Version](https://poser.pugx.org/hernandev/hipchat-laravel/version.svg)](https://packagist.org/packages/hernandev/hipchat-laravel)
+[![Total Downloads](https://poser.pugx.org/hernandev/hipchat-laravel/downloads.svg)](https://packagist.org/packages/hernandev/hipchat-laravel)
+[![License](https://poser.pugx.org/hernandev/hipchat-laravel/license.svg)](https://packagist.org/packages/hernandev/hipchat-laravel)
 
 
 
-This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for Laravel 4.2+
+This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for Laravel 4 and 5
 
 
 ### Installation
 
-- Include `"he-rnand-es/hipchat-laravel"` inside the `"require"` section of `composer.json` file:
+- Include `"hernandev/hipchat-laravel"` inside the `"require"` section of `composer.json` file:
 
     ```php
         ...
         "require": {
             ...,
-            "he-rnand-es/hipchat-laravel": "0.1.*"
+            "hernandev/hipchat-laravel": "1.0.*"
         }
         ...
     
@@ -30,24 +30,24 @@ This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for 
     composer update
     ```
 
-- Insert `'HeRnandEs\HipchatLaravel\HipchatLaravelServiceProvider',` in your `'providers'` array, inside `app/config/app.php`:
+- Insert `'Hernandev\HipchatLaravel\HipchatLaravelServiceProvider',` in your `'providers'` array, inside `app/config/app.php`:
 
     ```php
     ...
     'providers' => array(
         ...
-        'HeRnandEs\HipchatLaravel\HipchatLaravelServiceProvider',
+        'Hernandev\HipchatLaravel\HipchatLaravelServiceProvider',
     ),
     ```
     
     
-- Insert `'HipChat'         => 'HeRnandEs\HipchatLaravel\Facade\HipChat',` in your `'alises'` array, inside `app/config/app.php`:
+- Insert `'HipChat' => 'Hernandev\HipchatLaravel\Facade\HipChat',` in your `'alises'` array, inside `app/config/app.php`:
 
     ```php
     ...
     'aliases' => array(
         ...
-        'HipChat'         => 'HeRnandEs\HipchatLaravel\Facade\HipChat',
+        'HipChat'         => 'Hernandev\HipchatLaravel\Facade\HipChat',
     ),
     ```
     
@@ -55,10 +55,10 @@ This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for 
 - To Publish the configuration files you will need, run:
 
     ```
-    php artisan config:publish he-rnand-es/hipchat-laravel
+    php artisan config:publish hernandev/hipchat-laravel
     ```
 
-- Edit `app/config/packages/he-rnand-es/hipchat-laravel/config.php` file updating it your credentials / configurations:
+- Edit `app/config/packages/hernandev/hipchat-laravel/config.php` file updating it your credentials / configurations:
 
     ```php
     'api_token' => 'insert_your_api_token',
