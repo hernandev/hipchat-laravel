@@ -15,7 +15,7 @@
         "hipchat/hipchat-php": ">=1.0.0"
     },
     "autoload": {
-        "psr-4": {
+        "psr-0": {
             "Hernandev\\HipchatLaravel\\": "src/"
         }
     },
