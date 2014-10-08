@@ -1,9 +1,9 @@
-<?php namespace HeRnandEs\HipchatLaravel;
+<?php namespace Hernandev\HipchatLaravel;
 
-use HeRnandEs\HipchatLaravel\Exception\NoApiTokenException;
-use HeRnandEs\HipchatLaravel\Exception\NoAppNameException;
-use HeRnandEs\HipchatLaravel\Exception\RoomNotDefinedException;
-use HeRnandEs\HipchatLaravel\Exception\UserNotDefinedException;
+use Hernandev\HipchatLaravel\Exception\NoApiTokenException;
+use Hernandev\HipchatLaravel\Exception\NoAppNameException;
+use Hernandev\HipchatLaravel\Exception\RoomNotDefinedException;
+use Hernandev\HipchatLaravel\Exception\UserNotDefinedException;
 use Config;
 use HipChat\HipChat as HipChatOriginal;
 
@@ -178,4 +178,4 @@ class HipChat
 
 
 
-} 
+}
