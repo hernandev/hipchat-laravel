@@ -1,22 +1,22 @@
 {
-    "name": "he-rnand-es/hipchat-laravel",
-    "description": "HipChat PHP Client Wrapper for Laravel 4.2+",
+    "name": "hernandev/hipchat-laravel",
+    "description": "HipChat PHP Client Wrapper for Laravel 4 and 5",
     "keywords": ["hipchat", "laravel", "package"],
     "license": "MIT",
     "authors": [
         {
             "name": "Diego Hernandes",
-            "email": "diego@he.rnand.es"
+            "email": "diego@hernandev.com"
         }
     ],
     "require": {
         "php": ">=5.4.0",
-        "illuminate/support": "4.2.*",
+        "illuminate/support": "4.x|5.0.x",
         "hipchat/hipchat-php": ">=1.0.0"
     },
     "autoload": {
-        "psr-0": {
-            "HeRnandEs\\HipchatLaravel\\": "src/"
+        "psr-4": {
+            "Hernandev\\HipchatLaravel\\": "src/"
         }
     },
     "minimum-stability": "stable"
