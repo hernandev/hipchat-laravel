@@ -1,4 +1,4 @@
-<?php namespace HeRnandEs\HipchatLaravel\Exception;
+<?php namespace Hernandev\HipchatLaravel\Exception;
 
 use Exception;
 
@@ -11,4 +11,4 @@ class UserNotDefinedException extends Exception
     protected $file;
 
     protected $line;
-} 
+}
