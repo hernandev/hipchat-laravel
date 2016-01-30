@@ -20,35 +20,34 @@ class HipChat
     protected $user = null;
 
 
-
     public function __construct()
     {
-        if (Config::has('hipchat-laravel::hipchat.api_token')) {
-            $this->api_token = Config::get('hipchat-laravel::hipchat.api_token');
+        if (Config::has('hipchat.api_token')) {
+            $this->api_token = Config::get('hipchat.api_token');
         }
 
         if ($this->api_token) {
             $this->hc = new HipChatOriginal($this->api_token);
         }
 
-        if (Config::has('hipchat-laravel::hipchat.app_name')) {
-            $this->app_name = Config::get('hipchat-laravel::hipchat.app_name');
+        if (Config::has('hipchat.app_name')) {
+            $this->app_name = Config::get('hipchat.app_name');
 
         }
 
-        if (Config::has('hipchat-laravel::hipchat.default_room')) {
-            $this->room = Config::get('hipchat-laravel::hipchat.default_room');
+        if (Config::has('hipchat.default_room')) {
+            $this->room = Config::get('hipchat.default_room');
         }
     }
 
 
     protected function verify()
     {
-        if (!$this->api_token) {
+        if ( !$this->api_token) {
             throw new NoApiTokenException;
         }
 
-        if (!$this->app_name) {
+        if ( !$this->app_name) {
             throw new NoAppNameException;
         }
     }
@@ -56,7 +55,7 @@ class HipChat
     protected function checkRoom()
     {
         $this->verify();
-        if (!$this->room) {
+        if ( !$this->room) {
             throw new RoomNotDefinedException;
         }
     }
@@ -64,7 +63,7 @@ class HipChat
     protected function checkUser()
     {
         $this->verify();
-        if (!$this->user) {
+        if ( !$this->user) {
             throw new UserNotDefinedException;
         }
     }
@@ -96,54 +95,63 @@ class HipChat
     public function get_room()
     {
         $this->checkRoom();
+
         return $this->hc->get_room($this->room);
     }
 
     public function room_exists()
     {
         $this->checkRoom();
+
         return $this->hc->room_exists($this->room);
     }
 
     public function get_rooms()
     {
         $this->verify();
+
         return $this->hc->get_rooms();
     }
 
     public function get_rooms_history($date = 'recent')
     {
         $this->checkRoom();
+
         return $this->hc->get_rooms_history($this->room, $date);
     }
 
     public function set_room_topic($topic, $from = null)
     {
         $this->checkRoom();
+
         return $this->hc->set_room_topic($this->room, $topic, $from);
     }
 
     public function create_room($name, $privacy = null, $topic = null, $guest_access = null)
     {
         $this->checkUser();
+
         return $this->hc->create_room($name, $this->user, $privacy, $topic, $guest_access);
     }
 
     public function delete_room()
     {
         $this->checkRoom();
+
         return $this->hc->delete_room($this->room);
     }
 
     public function get_user()
     {
         $this->checkUser();
+
         return $this->hc->get_user($this->user);
     }
 
     public function get_users()
     {
         $this->verify();
+
         return $this->hc->get_users();
     }
 
@@ -152,6 +160,7 @@ class HipChat
                                 $password = null, $timezone = null)
     {
         $this->verify();
+
         return $this->hc->create_user($email, $name, $mention_name, $title, $is_group_admin, $password, $timezone);
     }
 
@@ -161,21 +170,23 @@ class HipChat
                                 $timezone = null)
     {
         $this->checkUser();
+
         return $this->hc->update_user($this->user, $email, $name, $mention_name, $title, $is_group_admin, $password, $timezone);
     }
 
     public function delete_user()
     {
         $this->checkUser();
+
         return $this->hc->delete_user($this->user);
     }
 
     public function undelete_user()
     {
         $this->checkUser();
+
         return $this->hc->undelete_user($this->user);
     }
-
 
 
 }
