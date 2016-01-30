@@ -18,6 +18,7 @@ return array(
     |--------------------------------------------------------------------------
     |
     | Choose a name you want to be displayed on HipChat
+    | Length: from 1 to 15 characters
     |
     */
     'app_name' => 'Your App Name',
