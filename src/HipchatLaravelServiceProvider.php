@@ -21,7 +21,7 @@ class HipchatLaravelServiceProvider extends ServiceProvider
         // published config file
         $this->publishes([
             __DIR__.'/config/hipchat.php' => config_path('hipchat.php')
-        ]);
+        ], 'hipchat');
     }
 
     /**
