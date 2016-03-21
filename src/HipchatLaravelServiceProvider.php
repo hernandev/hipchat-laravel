@@ -18,7 +18,10 @@ class HipchatLaravelServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('hernandev/hipchat-laravel');
+        // published config file
+        $this->publishes([
+            __DIR__.'/config/hipchat.php' => config_path('hipchat.php')
+        ]);
     }
 
     /**
@@ -29,15 +32,5 @@ class HipchatLaravelServiceProvider extends ServiceProvider
         $this->app->singleton('hipchat-laravel', function () {
             return new HipChat();
         });
-    }
-
-    /**
-     * Get the services provided by the provider.
-     *
-     * @return array
-     */
-    public function provides()
-    {
-        return array('hipchat-laravel');
     }
 }

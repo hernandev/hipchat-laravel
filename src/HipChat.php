@@ -45,10 +45,10 @@ class HipChat
      */
     public function __construct()
     {
-        $this->api_token = config('hipchat-laravel::hipchat.api_token', null);
-        $this->app_name = config('hipchat-laravel::hipchat.app_name', null);
-        $this->room = config('hipchat-laravel::hipchat.default_room', null);
-        $this->server = config('hipchat-laravel::hipchat.server', null);
+        $this->api_token = config('hipchat.api_token', null);
+        $this->app_name = config('hipchat.app_name', null);
+        $this->room = config('hipchat.default_room', null);
+        $this->server = config('hipchat.server', null);
 
         if ($this->server) {
             $this->hipchat = new HipChatClient($this->api_token, $this->server);
@@ -171,8 +171,8 @@ class HipChat
     }
 
     public function createUser($email, $name, $mention_name = null,
-                                $title = null, $is_group_admin = 0,
-                                $password = null, $timezone = null)
+        $title = null, $is_group_admin = 0,
+        $password = null, $timezone = null)
     {
         $this->verify();
 
@@ -180,9 +180,9 @@ class HipChat
     }
 
     public function updateUser($email = null, $name = null,
-                                $mention_name = null, $title = null,
-                                $is_group_admin = 0, $password = null,
-                                $timezone = null)
+        $mention_name = null, $title = null,
+        $is_group_admin = 0, $password = null,
+        $timezone = null)
     {
         $this->checkUser();
 
