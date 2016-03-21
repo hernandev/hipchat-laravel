@@ -1,4 +1,6 @@
-<?php namespace Hernandev\HipchatLaravel\Exception;
+<?php
+
+namespace Hernandev\HipchatLaravel\Exception;
 
 use Exception;
 

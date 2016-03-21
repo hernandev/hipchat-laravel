@@ -1,31 +1,29 @@
-<?php namespace Hernandev\HipchatLaravel;
+<?php
+
+namespace Hernandev\HipchatLaravel;
 
 use Illuminate\Support\ServiceProvider;
 
 class HipchatLaravelServiceProvider extends ServiceProvider
 {
     /**
-	 * Indicates if loading of the provider is deferred.
-	 *
-	 * @var bool
-	 */
+     * Indicates if loading of the provider is deferred.
+     *
+     * @var bool
+     */
     protected $defer = false;
 
     /**
-	 * Bootstrap the application events.
-	 *
-	 * @return void
-	 */
+     * Bootstrap the application events.
+     */
     public function boot()
     {
         $this->package('hernandev/hipchat-laravel');
     }
 
     /**
-	 * Register the service provider.
-	 *
-	 * @return void
-	 */
+     * Register the service provider.
+     */
     public function register()
     {
         $this->app->singleton('hipchat-laravel', function () {
@@ -34,13 +32,12 @@ class HipchatLaravelServiceProvider extends ServiceProvider
     }
 
     /**
-	 * Get the services provided by the provider.
-	 *
-	 * @return array
-	 */
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
     public function provides()
     {
         return array('hipchat-laravel');
     }
-
 }
