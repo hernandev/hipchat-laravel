@@ -9,7 +9,7 @@ return array(
     | For Self Hosted Servers, Leave null for default cloud account.
     |
     */
-    'default_room' => null, // this is optional
+    'server' => null, // this is optional
 
     /*
     |--------------------------------------------------------------------------
@@ -21,7 +21,6 @@ return array(
     */
     'api_token' => 'insert_your_api_token',
 
-
     /*
     |--------------------------------------------------------------------------
     | HipChat API App Name
@@ -31,7 +30,6 @@ return array(
     |
     */
     'app_name' => 'Your App Name',
-
 
     /*
     |--------------------------------------------------------------------------
