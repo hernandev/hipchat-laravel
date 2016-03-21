@@ -17,7 +17,7 @@ This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for 
         ...
         "require": {
             ...,
-            "hernandev/hipchat-laravel": "1.0.*"
+            "hernandev/hipchat-laravel": "~2.0"
         }
         ...
     
@@ -34,31 +34,31 @@ This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for 
 
     ```php
     ...
-    'providers' => array(
+    'providers' => [
         ...
-        'Hernandev\HipchatLaravel\HipchatLaravelServiceProvider',
-    ),
+        Hernandev\HipchatLaravel\HipchatLaravelServiceProvider::class,
+    ],
     ```
     
     
-- Insert `'HipChat' => 'Hernandev\HipchatLaravel\Facade\HipChat',` in your `'alises'` array, inside `app/config/app.php`:
+- Insert `'HipChat' => Hernandev\HipchatLaravel\Facade\HipChat:class,` in your `'aliases'` array, inside `app/config/app.php`:
 
     ```php
     ...
-    'aliases' => array(
+    'aliases' => [
         ...
-        'HipChat'         => 'Hernandev\HipchatLaravel\Facade\HipChat',
-    ),
+        'HipChat'         => Hernandev\HipchatLaravel\Facade\HipChat::class,
+    ],
     ```
     
     
 - To Publish the configuration files you will need, run:
 
     ```
-    php artisan config:publish hernandev/hipchat-laravel
+    php artisan vendor:publish --tag=laravel
     ```
 
-- Edit `app/config/packages/hernandev/hipchat-laravel/config.php` file updating it your credentials / configurations:
+- Edit `app/config/hipchat.php` file updating it your credentials / configurations:
 
     ```php
     'api_token' => 'insert_your_api_token',
@@ -93,21 +93,21 @@ This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for 
 
     ```php
     HipChat::setRoom('RoomName');
-    HipChat::get_room(); // StdObject
+    HipChat::getRoom(); // StdObject
     ```
     
 - Verify is a room exists
 
     ```php
     HipChat::setRoom('RoomName');
-    HipChat::room_exists(); // boolean
+    HipChat::roomExists(); // boolean
     ```
     
     
 - Get Rooms List
 
     ```php
-    HipChat::get_rooms(); // json
+    HipChat::getRooms(); // json
     ```
     
     
@@ -115,7 +115,7 @@ This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for 
 
     ```php
     HipChat::setRoom('RoomName');
-    return HipChat::get_rooms_history(); // json
+    return HipChat::getRoomsHistory(); // json
     ```
     
     
@@ -123,21 +123,21 @@ This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for 
 
     ```php
     HipChat::setRoom('RoomName');
-    return HipChat::set_room_topic('New Topic via API'); // boolean
+    return HipChat::setRoomTopic('New Topic via API'); // boolean
     ```
     
     
 - Get a List of Users
 
     ```php
-    HipChat::get_users(); // json
+    HipChat::getUsers(); // json
     ```
     
 - Get an User details
 
     ```php
     HipChat::setUser('me@me.com'); // you can use id, email or @mention_name
-    HipChat::get_user(); // StdObject
+    HipChat::getUser(); // StdObject
     ```
     
 - Create an Room
@@ -145,13 +145,13 @@ This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for 
     ```php
     HipChat::setUser('me@me.com'); // you can use id, email or @mention_name
     // see optional fields on code
-    HipChat::create_room('New Room Name'); // boolean
+    HipChat::createRoom('New Room Name'); // boolean
     ```
     
 - Get a List of Users
 
     ```php
-    HipChat::get_users(); // json
+    HipChat::getUsers(); // json
     ```
     
 
@@ -159,14 +159,14 @@ This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for 
 
     ```php
     HipChat::setRoom('RoomName');
-    HipChat::delete_room(); // boolean
+    HipChat::deleteRoom(); // boolean
     ```
 
 - Create User
 
     ```php
     // email, first_name last_name, mention_name, title
-    HipChat::create_user('me2@me2.com', 'First Last', 'mention', 'title'); // boolean
+    HipChat::createUser('me2@me2.com', 'First Last', 'mention', 'title'); // boolean
     ```
     
 - Update User Info
@@ -176,7 +176,7 @@ This a [HipChat PHP Client](https://github.com/hipchat/hipchat-php) wrapper for 
     HipChat::setUser('me@me.com');
     
     // same signature as create_user method, pass null the fields you dont want to update
-    HipChat::update_user(null, 'NewFirst New Last'); // boolean
+    HipChat::updateUser(null, 'NewFirst New Last'); // boolean
     
     ```
 
